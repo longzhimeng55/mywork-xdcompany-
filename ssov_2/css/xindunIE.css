@@ -1,0 +1,25 @@
+.search-select select.form-control{
+	background-image: none!important;
+	padding-right: 2px!important;
+}
+.dialog-content table tbody tr td select.form-control,
+.dialog-content table tbody tr td select.control-label {
+	background-image: none!important;
+	padding-right: 2px!important;
+}
+
+.nav>li>a>i+i+i {
+	margin-left: 8px;
+	margin-right: 0px;
+	padding: 0px;
+}
+.xd-nav-arrows {
+    background-image: url(../image/xdglobal-compat.svg);
+    background-position: 28.52% 77.46%;
+    background-size: 1700% 1625%;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../image/xdglobal-compat.svg',sizingMethod='scale');
+
+}
+.homepage-chartsearch form .homepage-chartsearchcon:first-child{
+	
+}

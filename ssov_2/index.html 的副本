@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<meta content="user-scalable=yes" name="viewport">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="renderer" content="webkit">
+		<title>ssov2</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen" />
+		<link href="css/common.min.css?v=20171215qq" rel="stylesheet" type="text/css" />
+		<link href="css/ssologinv2.css?v=20170226qq" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<style>
+
+		</style>
+	</head>
+
+	<body class="xd-ssov2body">
+		<canvas id="ssov2login_bg" style="position: absolute; top: 0px; left: 0px; z-index: -1; visibility: visible;" width="1536" height="735"></canvas>
+		<div class="main">
+			<div class="main_con1"></div>
+			<div>
+				<div class="conlogin-leftout">
+					<div id="wrapper">
+						<div id="slider-wrap">
+							<ul id="slider">
+								<li data-url="../image/lunbo1.png" style="background: url(../ssov_2/image/lunbo1.png);"></li>
+								<li data-url="../image/lunbo2.png"></li>
+								<li data-url="../image/lunbo1.png"></li>
+							</ul>
+							<div id="pagination-wrap">
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="conlogin-rightout">
+					<div class="loginways">
+						<p class="login-title">扫码登录</p>
+						<p>使用"善认"APP 扫一扫登录门户</p>
+						<div class="two-dimencode">
+							<img src="image/2018-02-27_221427.png">
+						</div>
+						<div class="moreways">
+							<span>更多登录方式</span>
+						</div>
+					</div>
+					<div class="otherways">
+						<div class="go-backpage">
+							<span></span>
+						</div>
+						<div class="otherways-content">
+							<!--动态口令登录-->
+							<div class="otherways-login active" data-index="1">
+								<p>动态口令登录</p>
+								<div class="login-input">
+									<span>
+										<input type="text" name="username" id="username1" class="email-username" placeholder="请输入邮箱/手机号/工号"> 
+									</span>
+									<span>
+										<input type="text" name="username" id="username1" class="email-username" placeholder="请输入'芯盾'app上的六位数动态口令"> 
+									</span>
+								</div>
+								<button>登录</button>
+							</div>
+							<!--人脸登录-->
+							<div class="otherways-login" data-index="2">
+								<p>人脸登录</p>
+								<div class="login-input">
+									<span>
+										<input type="text" name="username" id="username1" class="email-username" placeholder="请输入邮箱/手机号/工号"> 
+									</span>
+									<span>
+										<input type="text" name="username" id="username1" class="email-username" placeholder="请输入'芯盾'app上的六位数动态口令"> 
+									</span>
+								</div>
+								<button>登录</button>
+							</div>
+							<!--语音登录-->
+							<!--App一键登录-->
+							<!--短信登录-->
+							<!--动态口令登录-->
+							<!--临时授权码登录-->
+							<!--微信登录-->
+						</div>
+						<div class="otherways-button">
+							<div class="button-content active" data-index="1">
+								<span></span>
+								<div class="login-icon">
+									<img/>
+								</div>
+							</div>
+							<div class="button-content" data-index="2">
+								<span></span>
+								<div class="login-icon">
+									<img/>
+								</div>
+							</div>
+							<div class="button-content">
+								<span></span>
+								<div class="login-icon">
+									<img/>
+								</div>
+							</div>
+							<div class="button-content">
+								<span></span>
+								<div>
+									<img/>
+								</div>
+							</div>
+							<div class="button-content">
+								<span></span>
+								<div>
+									<img/>
+								</div>
+							</div>
+							<div class="button-content">
+								<span></span>
+								<div>
+									<img/>
+								</div>
+							</div>
+							<div class="button-content">
+								<span></span>
+								<div>
+									<img/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login-bottombkpicOutline">
+			<div class="copyright-information" style="position: fixed;">
+				<div>图片2</div>
+				<p>Copyright © 2017. 北京芯盾时代科技有限公司. 版权所有 京ICP备15056030</p>
+			</div>
+		</div>
+		<script src="js/jquery-1.9.1.min.js?v=20170920qq"></script>
+		<script src="js/bootstrap.min.js?v=20170920qq"></script>
+		<script src="js/particles.js?v=20170920qq"></script>
+		<script src="js/particles-bk.js?v=20170920qq"></script>
+		<script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+		<script src="js/modernizr-2.8.3.min.js" type="text/javascript"></script>
+		<script src="js/slide.js"></script>
+		<script>
+    (function () {
+      var starAnimObj = {};
+      starAnimObj.canvasElement = null;
+      starAnimObj.starArr = [];
+      starAnimObj.nums = 150; //星星初始化数量
+      starAnimObj.linesArr=[];
+      starAnimObj.cxt = null;
+      starAnimObj.newLine = true;
+      starAnimObj.center= 0;
+      starAnimObj.interval = null;
+
+      starAnimObj.initStar = function () {
+        if(starAnimObj.starArr.length === 0){
+          for(var i=0; i<starAnimObj.nums; i++){
+            var array=["t","f"];
+            var r = Math.random()*1;  //生成星星的半径
+            var ax = Math.random()* starAnimObj.canvasElement.width;
+            var ay = Math.random()* starAnimObj.canvasElement.height;
+            var opactityS=Math.random()*1;
+            opactityS=opactityS>0.7?0.7:opactityS;
+            var trues = array[Math.floor(Math.random()*2)];
+
+            starAnimObj.starArr.push({
+              x:ax,
+              y:ay,
+              R:r,
+              initX:ax,
+              initY:ay,
+              moves:trues,
+              initOpacity:opactityS,
+              opacity:opactityS
+            });
+          }
+        }
+      };
+
+      starAnimObj.drawLine = function () {
+        if(starAnimObj.newLine===true){
+          var lineNum=Math.ceil(Math.random()*2);
+          starAnimObj.linesArr=[];
+          for(var i=0;i<lineNum;i++){
+            var lx=Math.random()*starAnimObj.canvasElement.width;
+            var ly=Math.random()*starAnimObj.canvasElement.height-Math.random()*500;
+            starAnimObj.linesArr.push({
+              initX:lx,
+              initY:0,
+              length:Math.random()*50+30,
+              speed:Math.random()*10
+            });
+          }
+          starAnimObj.newLine=false;
+        }
+      };
+
+      starAnimObj.draw = function () {
+        if(starAnimObj.canvasElement === null){
+          return;
+        }
+
+        var cxt = starAnimObj.cxt;
+        var canvasElement = starAnimObj.canvasElement;
+        var starArr = starAnimObj.starArr;
+        var linesArr  = starAnimObj.linesArr;
+
+
+        cxt.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        var colors = cxt.createLinearGradient(0, 0, 0, canvasElement.height);
+
+        colors.addColorStop(0,"#000428");
+        colors.addColorStop(1,"#004e92");
+        cxt.fillStyle=colors;
+
+        cxt.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+        for(var i=0; i< starAnimObj.starArr.length;i++){
+          var child=starArr[i];
+          cxt.save();
+          cxt.globalAlpha=child.opacity;
+          cxt.beginPath();
+          cxt.fillStyle="#ffffff";
+          cxt.arc(child.initX,child.initY,child.R,0,Math.PI*2,false);
+          cxt.fill();
+          cxt.closePath();
+          //移动
+
+          if(child.moves=='t'){
+            child.initX-=Math.random()*1*0.12;  //星星移动的速度
+            if(child.initX<0){
+              child.initX=child.x;
+            }
+          }
+          //透明度
+          if(child.opacity<0.8){
+            child.opacity+=0.005;
+            if(child.opacity>0.7){
+              child.opacity=child.initOpacity;
+            }
+          }
+          cxt.restore();
+        }
+
+        starAnimObj.drawLine();
+
+        for(var j=0;j<linesArr.length;j++){
+          var child2=linesArr[j];
+          cxt.save();
+          cxt.rotate(0);
+          cxt.beginPath();
+          cxt.strokeStyle="#28509a";
+          cxt.moveTo(child2.initX,child2.initY);
+          cxt.lineTo(child2.initX-Math.cos(Math.PI/180*45)*child2.length,child2.initY+Math.sin(Math.PI/180*45)*child2.length);
+          cxt.stroke();
+          cxt.restore();
+          child2.speed+=0.1;
+          var preX=Math.cos(Math.PI/180*45)*child2.speed;
+          var preY=Math.sin(Math.PI/180*45)*child2.speed;
+          child2.initX=child2.initX-preX;
+          child2.initY=child2.initY+preY;
+          if(child2.initX<0||child2.initY>canvasElement.height){
+            starAnimObj.center=j+1;
+          }
+          if(starAnimObj.center==linesArr.length){
+            starAnimObj.center=0;
+            starAnimObj.newLine=true;
+          }
+
+        }
+      };
+
+      starAnimObj.refresh = function (elementId) {
+        if(!starAnimObj.canvasSupport()){
+          return;
+        }
+        if(starAnimObj.elementId && starAnimObj.elementId === elementId){
+          starAnimObj.canvasElement=document.getElementById(starAnimObj.elementId);
+          if(starAnimObj.canvasElement===null){
+            starAnimObj.stopAnimation();
+            return;
+          }
+          starAnimObj.cxt=starAnimObj.canvasElement.getContext("2d");
+          starAnimObj.canvasElement.width =  window.innerWidth;
+          starAnimObj.canvasElement.height = window.innerHeight;
+          starAnimObj.draw();
+        }else{
+          starAnimObj.initAppCanvasBg(elementId);
+        }
+        starAnimObj.startAnimation();
+      };
+
+	starAnimObj.canvasSupport = function () {
+        return Modernizr.canvas;
+     };
+      starAnimObj.startAnimation = function () {
+        var mySelf = starAnimObj;
+        starAnimObj.stopAnimation();
+        if(starAnimObj.interval===null){
+          starAnimObj.interval = setInterval(function () {
+            mySelf.draw();
+          }, 20);
+          // 显示元素
+          if(starAnimObj.canvasElement!==null) {
+            starAnimObj.canvasElement.style.visibility = "visible";
+          }
+        }
+      };
+
+      starAnimObj.stopAnimation = function () {
+        clearInterval(starAnimObj.interval);
+        starAnimObj.interval = null;
+        // 隐藏元素
+        if(starAnimObj.canvasElement!==null) {
+          starAnimObj.canvasElement.style.visibility = "hidden";
+        }
+      };
+
+      starAnimObj.initAppCanvasBg = function (elementId) {
+        if(!starAnimObj.canvasSupport()){
+          return;
+        }
+        starAnimObj.elementId = elementId;
+        starAnimObj.canvasElement = document.getElementById(elementId);
+        if(starAnimObj.canvasElement===null){
+          return;
+        }
+
+        starAnimObj.cxt=starAnimObj.canvasElement.getContext("2d");
+        starAnimObj.canvasElement.width =  window.innerWidth;
+        starAnimObj.canvasElement.height = window.innerHeight;
+        starAnimObj.initStar();
+      };
+      // 添加监听事件
+      var canvasElementJq = $("#ssov2login_bg");
+      canvasElementJq.on("loginAnimRefresh", function (e, p) {
+        // 判断是否应该播放动画的逻辑
+        var appDiv = $("div.app-main");
+        var loginFlag = $("span#loginFlag");
+        if((appDiv !== undefined && appDiv.length > 0) && (loginFlag === undefined || loginFlag.length === 0)) {
+          // 不启动动画
+          return;
+        }
+        if(!p) {
+          p = "ssov2login_bg";
+        }
+        starAnimObj.refresh(p);
+      });
+      canvasElementJq.on("loginAnimStop", function (e, p) {
+          if(starAnimObj&&(p===starAnimObj.elementId)){
+              starAnimObj.stopAnimation();
+          }else if(p!==starAnimObj.elementId){
+              var canvasElement = document.getElementById(p);
+              if(canvasElement!==null){
+                  canvasElement.style.visibility = "hidden";
+              }
+          }
+      });
+      canvasElementJq.on("loginAnimInit", function (e, p) {
+        if(!p) {
+          p = "ssov2login_bg";
+        }
+        starAnimObj.initAppCanvasBg(p);
+      });
+      // 开始动画
+      starAnimObj.initAppCanvasBg("ssov2login_bg");
+      starAnimObj.refresh("ssov2login_bg");
+    })();
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input, textarea').placeholder();
+
+				function box() {
+					var oBox = document.getElementById('idaasloginOutline');
+					var H1 = oBox.offsetHeight;
+					var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+					var top = (h - H1) / 2;
+					oBox.style.paddingTop = top + 'px';
+				}
+				box();
+			})
+			$(document).resize(function() {
+				box();
+			});
+			$(".moreways").on("click", function() {
+				$("#wrapper").remove();
+				$("#wrapper").addClass("wrapper");
+				$(".conlogin-rightout").animate({
+						right: '600px'
+					})
+					.addClass("conlogin-rightout1");
+				$(this).remove();
+			});
+			$(".login-icon").on("click", function() {
+				var index = $(this).parent(".button-content").attr("data-index");
+				$(this).parent(".button-content").addClass('active').siblings().removeClass('active');
+				$(".tab_content" + index).show().siblings().hide();
+			});
+		</script>
+	</body>
+
+</html>

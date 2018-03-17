@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<meta content="user-scalable=yes" name="viewport">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="renderer" content="webkit">
+		<title>SSO内页</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" media="screen" />
+		<link href="css/common.min.css?v=20171215qq" rel="stylesheet" type="text/css" />
+		<link href="css/ssointerv2.css?v=20170226qq" rel="stylesheet" type="text/css" />
+		<style>
+
+		</style>
+	</head>
+
+	<body class="xd-outline">
+		<div class="xd-ssov2header top-navbar">
+			<div class="main-title">
+				<div class="main-icon">
+					<img src="../ssov_2/image/logo1.png">
+				</div>
+				<div class="main-iconcontent">
+					<p>善认 · 一站式移动身份认证(IDaaS)</p>
+				</div>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle">
+						<i class="fa fb fa-username"></i>
+						<span>张恬静</span>
+						<i class="xd-nav-arrows"></i>
+					</a>
+					<div class="dropdown-operation">
+						<div class="login-details">
+							<div class="details-icon">
+								<span></span>
+							</div>
+							<p style="font-size: 16px;color: #333333;">张恬静</p>
+							<p>zhangtianjing@trusfort.com</p>
+						</div>
+						<ul class="dropdown-menu dropdown-user">
+							<li>
+								<a><i class="fa fb fa-changepassword "></i><span>修改密码</span></a>
+							</li>
+							<li>
+								<a><i class="fa fb fa-equipmentman"></i><span>设备管理</span></a>
+							</li>
+							<li>
+								<a><i class="fa fb fa-wechatlogin"></i><span>微信解绑</span></a>
+							</li>
+							<li>
+								<a><i class="fa fb fa-exit"></i><span>退出登录</span></a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div>
+				<div class="search-picout">
+					<div class="search-pic">
+						<span class="icon"></span>
+					</div>
+					<span class="input1" style="position: absolute;">
+						<input type="text" name="searchother" id="searchother" placeholder="请输入用户名称" style="color: #FFFFFF!important;">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="xd-ssov2content">
+			<!--弹出提示信息-->
+			<!--<div class="top-alert" id="topAlert" style="z-index: 1100;margin-left: -200px;">
+				<p id="flashMsg" class="top-alert-icon-waring fade-out">试着拖拽标签位置进行排序 </p>
+			</div>-->
+			<div class="ssov2content" id="main-forword">
+				<div class="container">
+					<ul class="tabs" style="position: relative;">
+						<li data-index="1" class="active">全部应用</li>
+						<li data-index="2">我的常用</li>
+						<li data-index="3">办公协同</li>
+						<li data-index="4">客户关系</li>
+						<!--标签管理按钮-->
+						<div class="ssov2-label ssov2-addlabel">
+							<a>
+								<span class="ssov2-icon addlabel"></span>
+								<span>新增标签</span>
+							</a>
+						</div>
+						<div class="ssov2-label ssov2-managelabel">
+							<a>
+								<span class="ssov2-icon managelabel"></span>
+								<span>管理当前标签</span>
+							</a>
+							<!--点击管理当前标签弹出相应的内容-->
+							<div class="managelabel-outline">
+								<ul>
+									<li>重命名</li>
+									<li>编辑标签下应用</li>
+									<li>删除标签</li>
+								</ul>
+							</div>
+						</div>
+
+					</ul>
+				</div>
+				<div class="content">
+					<div id="loader"></div>
+					<div id="tab1" class="tab_content tab_content1 module_list">
+						<input type="hidden" id="orderlist" value="12,8,4,1,10,3,2,5,9,11">
+						<div class="sidebar-right app-item" title="1">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<div class="message-number">
+								<span>122</span>
+							</div>
+							<div class="message-outline">
+								<ul>
+									<li>
+										<span>门户553-SSO门户设备管理需求改进...</span>
+										<span>代办</span>
+										<span>01-08 14:32:21</span>
+										<span></span>
+									</li>
+									<li>
+										<span>门户553-SSO门户设备管理需求改进...</span>
+										<span>代办</span>
+										<span>01-08 14:32:21</span>
+										<span></span>
+									</li>
+									<li>
+										<span>门户553-SSO门户设备管理需求改进...</span>
+										<span>代办</span>
+										<span>01-08 14:32:21</span>
+										<span></span>
+									</li>
+									<div class="neglect-message">
+										<p>
+											<span>忽略全部消息</span>
+										</p>
+									</div>
+								</ul>
+							</div>
+							<p>后勤管理系统1</p>
+						</div>
+						<div class="sidebar-right app-item" title="2">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<p>后勤管理系统2</p>
+						</div>
+						<div class="sidebar-right app-item" title="3">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<p>后勤管理系统3</p>
+						</div>
+						<div class="sidebar-right app-item" title="4">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<p>后勤管理系统4</p>
+						</div>
+						<div class="sidebar-right app-item" title="5">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" />
+								</div>
+							</div>
+							<p>后勤管理系统5</p>
+						</div>
+						<div class="sidebar-right app-item" title="6">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" />
+								</div>
+							</div>
+							<p>后勤管理系统6</p>
+						</div>
+						<div class="sidebar-right app-item" title="7">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" />
+								</div>
+							</div>
+							<p>后勤管理系统7</p>
+						</div>
+						<div class="sidebar-right app-item" title="8">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" />
+								</div>
+							</div>
+							<p>后勤管理系统8</p>
+						</div>
+						<div class="sidebar-right app-item app-additem">
+							<div class="sidebar-right-pic">
+								<div class="supply-img supply-addimg">
+									<img src="image/addapl.png" />
+								</div>
+							</div>
+							<p>添加应用</p>
+						</div>
+					</div>
+					<div id="tab2" class="tab_content tab_content2" style="display: none;">
+						<div class="sidebar-right app-item">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<p>后勤管理系统2</p>
+						</div>
+					</div>
+					<div id="tab3" class="tab_content tab_content3" style="display: none;">
+						<div class="sidebar-right noapp-item">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/noappitem.png" />
+								</div>
+								<p>这里什么都没有，太荒凉了，赶快<span><i></i>添加应用</span>吧！</p>
+							</div>
+						</div>
+					</div>
+					<div id="tab4" class="tab_content tab_content4" style="display: none;">
+						<div class="sidebar-right app-item">
+							<div class="sidebar-right-pic">
+								<div class="supply-img">
+									<img src="image/e8037021f81247f2afc1a46b6260192a.png" alt="" />
+								</div>
+							</div>
+							<p>后勤管理系统3</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: -1; overflow: auto; display: none;">
+			<div class="dialog_layer_v2 modal-in" style="position: relative; z-index:-1;top: 157.5px; margin: 10px auto;display: none;">
+				<div class="dialog_layer_main">
+					<div class="dialog_layer_title">
+						<h3>我的常用</h3>
+						<a class="close" title="关闭" href="javascript:;"><i>×</i></a>
+					</div>
+					<div class="dialog_layer_cont">
+						<div class="equipmen_msg">
+						<p>打开开关用以接受认证推送</p>
+						</div>
+					<!--我的常用-->
+					<div class="edit_form_wrap">
+						<ul class="edit_psword">
+							<li> <input type="text" class="txt_input" placeholder="我的常用"></li>
+						</ul>
+					</div>
+					<!--修改密码-->
+					<div class="change_pwd">
+							<ul class="edit_psword">
+							<li> <input type="text" class="txt_input" placeholder="原密码"></li>
+							<li> <input type="text" class="txt_input" placeholder="请输入新密码"></li>
+							<li> <input type="text" class="txt_input" placeholder="请再次输入新密码"></li>
+							<p>tips：密码长度不能少于6位，必须是数字和字母的组合</p>
+						</ul>
+					</div>
+					
+					
+					<div class="equipmen_outline">
+						<ul>
+							<li>
+								<div>
+									<span class="equipmen_icon equipmen_apple"></span>
+									<div class="equipmen_name">
+										<p>张恬静iPhone（本机）</p>
+										<p>iPhone iOS 11.2.1</p>
+									</div>
+									<span class="equipmen_use"></span>
+									<span class="equipmen_delete">删除</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<span class="equipmen_icon"></span>
+									<div class="equipmen_name">
+										<p>OPPO VIVO R11</p>
+										<p>Android 5.1.1</p>
+									</div>
+									<span class="equipmen_use"></span>
+									<span class="equipmen_delete">删除</span>
+								</div>
+							</li>
+							<li>
+								<div>
+									<span class="equipmen_icon equipmen_apple"></span>
+									<div class="equipmen_name">
+										<p>张恬静iPhone（本机）</p>
+										<p>iPhone iOS 11.2.1</p>
+									</div>
+									<span class="equipmen_use"></span>
+									<span class="equipmen_delete">删除</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="common_useoutline ">
+						<div class="common_useleft">
+							<p>全部应用</p>
+							<div class="common_usesearch">
+								<div class="search-picout">
+									<div class="search-pic">
+										<span class="icon"></span>
+									</div>
+									<span class="input1" style="position: absolute;">
+						<input type="text" name="searchother" id="searchother" placeholder="请输入用户名称">
+					</span>
+								</div>
+							</div>
+							<div class="common_usesel">
+								<ul>
+									<li>
+										<input type="checkbox" class="usesearch_checkbox">
+										<img />
+										<span>亚马逊云服务 </span>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+						<div class="common_useright">
+							<p>已选应用</p>
+							<div class="common_rightname">
+								<ul id="deptDisAppid">
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+									<li class="sel">
+										<div>
+											<img src="">
+										</div>
+										<div>统一登录门户</div>
+									</li>
+
+								</ul>
+							</div>
+							<div class="dialog_layer_ft">
+								<a href="javascript:void(0);" class="btn btn_green"><span> 确定 </span></a>
+								<a href="javascript:void(0);" class="btn btn_white_2"><span>取消</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="dialog-confirm"><p>确定要删除吗？</p></div>
+					<div class="dialog_layer_ft dialog_layer_ft1">
+						<a href="javascript:void(0);" class="btn btn_green"><span> 确定 </span></a>
+						<a href="javascript:void(0);" class="btn btn_white_2"><span>取消</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mask-in" style="display: none;z-index:-1;"></div>
+
+		<script src="js/jquery-1.9.1.min.js?v=20170920qq" type="text/javascript"></script>
+		<script src="js/jquery-sortable.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js?v=20170920qq" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*显示浮层*/
+				function showlayer(title, layername,mess) {
+					$(".dialog_layer_title h3").text(title);
+					$(".dialog-confirm p").text(mess);
+					$(".dialog_layer_v2").addClass(layername).attr({
+						"data-name": layername
+					});
+					$(".dialog_layer_v2").show().css({
+						"z-index": "1000"
+					});
+					$(".dialog_layer_v2").parent("div").show().css({
+						"z-index": "1000"
+					});
+					$(".mask-in").show().css({
+						"z-index": "999"
+					});
+				}
+				/*隐藏浮层*/
+				function hidelayer(layername) {
+					if(layername != "" && layername != null) {
+						$(".dialog_layer_v2").removeClass(layername);
+					}
+					$(".dialog_layer_v2").hide().css({
+						"z-index": "-1"
+					});
+					$(".dialog_layer_v2").parent("div").hide().css({
+						"z-index": "-1"
+					});
+					$(".mask-in").hide().css({
+						"z-index": "-1"
+					});
+				}
+				/*添加应用显示*/
+				function addapply(name){
+					showlayer("添加应用", "common_use",name);
+						$(".common_useleft,.common_useright").addClass("active");
+						$(".txt_input").attr({
+							"placeholder": "请输入标签名称"
+						});
+				}
+				/*tab切换开始 */
+				var tabconindex = "";
+				var tabtitelname = "";
+				$('.tabs>li').on("click", function() {
+					var index = $(this).attr("data-index");
+					tabtitelname = $(this).text();
+					if(index == 1) {
+						$(".ssov2-managelabel").hide();
+					} else {
+						$(".ssov2-managelabel").show();
+					}
+					$(this).addClass('active').siblings().removeClass('active');
+					$(".tab_content" + index).show().siblings().hide();
+				})
+				/*搜索框边框变色*/
+				/*当鼠标在悬浮在上面*/
+				$(".search-picout").on("mouseover", function() {
+					$(this).addClass("search-pichover");
+				}).on("mouseleave", function() {
+					$(this).removeClass("search-pichover");
+				});
+				/*获取光标变色*/
+				$(".search-picout>.input1 input").on("focus", function() {
+					$(this).parents(".search-picout").addClass("search-picfocus");
+				}).on("blur", function() {
+					$(this).parents(".search-picout").removeClass("search-picfocus");
+				});
+				/*点击小红点显示消息*/
+				$(".message-number>span").on("click", function() {
+					$(this).parents(".app-item").find(".message-outline").show();
+				});
+				/*点击忽略全部消息关闭消息*/
+				$(".neglect-message p span").on("click", function() {
+					$(this).parents(".message-outline").hide();
+					$(this).parents(".app-item").find(".message-number").hide();
+				});
+				/*点击管理当前标签按钮*/
+				$(document).on("click", ".ssov2-managelabel", function(event) {
+					$(this).addClass("ssov2-managelabel1");
+					$(".managelabel-outline").addClass("active");
+				});
+				/*点击新增标签按钮*/
+				$(".ssov2-addlabel a").on("click", function(e) {
+					showlayer("添加标签", "addmy_use");
+					$(".edit_form_wrap .edit_psword input").attr("placeholder", "请输入需要添加标签的名称");
+				});
+				/*点击头像弹出相关操作*/
+				$(".xd-ssov2header .dropdown a span").on("click", function(e) {
+					$(".dropdown-operation").show();
+				});
+				$(document).bind("click", function(e) {
+					var target = $(e.target);
+					if(target.closest(".ssov2-managelabel").length == 0) {
+						$(".managelabel-outline").hide();
+					}
+					if(target.closest(".dropdown-operation").length == 0 && target.closest(".dropdown-toggle").length == 0) {
+						$(".dropdown-operation").hide();
+					}
+					if(target.closest(".managelabel-outline").length == 0 && target.closest(".ssov2-managelabel").length == 0) {
+						$(".managelabel-outline").removeClass("active");
+					}
+				});
+				/*拖拽排序*/
+				/*$(function() {
+							$(".sidebar-right").bind('mouseover', function() {
+								$(this).css("cursor", "move")
+							});
+							var $show = $("#loader");
+							var $orderlist = $("#orderlist");
+							var $list = $(".module_list");
+							$list.sortable({
+								opacity: 0.6, //设置拖动时候的透明度
+								revert: true, //缓冲效果
+								cursor: 'move', //拖动的时候鼠标样式 
+								handle: '.sidebar-right', //可以拖动的部位，模块的标题部分 
+								update: function() {
+									var new_order = [];
+									$list.children(".sidebar-right .app-item").each(function() {
+										new_order.push(this.title);
+									});
+									var newid = new_order.join(',');
+									var oldid = $orderlist.val();
+									$.ajax({
+										type: "post",
+										url: "update.jsp", //服务端处理程序 
+										data: {
+											id: newid,
+											order: oldid
+										}, //id:新的排列对应的ID,order：原排列顺序 
+										beforeSend: function() {
+											$show.html("正在更新…");
+										},
+										success: function(msg) {
+											//alert(msg); 
+											$show.html("");
+										}
+									});
+								}
+							});*/
+				/*设备管理弹框点击删除按钮*/
+				$(".equipmen_delete").on("click", function(e) {
+					var thatname = $(this).parent("div").find(".equipmen_name p:first-child").text();
+					var equipmenmsg = $(this).parents(".dialog_layer_cont").find(".equipmen_msg p");
+					thatname = equipmenmsg.text();
+					$(this).parents(".dialog_layer_cont").find(".equipmen_msg p").addClass("")
+				});
+				/*关闭弹层*/
+				$(".dialog_layer_title .close,.dialog_layer_ft .btn").on("click", function(e) {
+					var layerrv = $(".dialog_layer_v2").attr("data-name");
+					hidelayer(layerrv);
+				});
+
+				/*点击管理当前标签下面的操作*/
+				$(document).on("click", ".managelabel-outline ul li", function(e) {
+					var liindex = $(this).index();
+					var thattext = $(this).text();
+					/*重命名*/
+					if(liindex == 0) {
+						showlayer(thattext, "addmy_use");
+						$(".edit_form_wrap .edit_psword input").val(tabtitelname);
+					}
+					/*编辑标签下应用-我的常用*/
+					if(liindex == 1) {
+						addapply("添加应用","common_use");
+					}
+					/*删除标签*/
+					if(liindex == 2) {
+						var messtext="确定要删除当前标签吗？";
+						showlayer("删除标签","alonemess",messtext);
+					}
+				});
+				/*点击头像显示下面的内容*/
+			$(document).on("click", ".dropdown-menu.dropdown-user li", function(e) {
+					var liindex = $(this).index();
+					var thattext = $(this).text();
+					/*修改密码*/
+					if(liindex == 0) {
+						showlayer(thattext,"common_pwd");
+					}
+					/*设备管理*/
+					if(liindex == 1) {
+						showlayer(thattext,"equipmenman");
+						var deleteindex="";
+	$(".equipmen_outline .equipmen_delete").on("click",function(){
+		var deleteindex=$(this).siblings("li").index();
+		var indexname=$(this).siblings(".equipmen_name").find("p:eq(0)").text();
+							var changetext="此操作将删除"+indexname+"设备内的所有账户信息删除<span>确认</span><span>取消</span>";
+							$(".equipmen_msg").addClass("equipmen_opt");
+							$(".equipmen_msg p").html(changetext);
+						})
+			$(document).on("click",".equipmen_msg.equipmen_opt p span",function(){
+							if($(this).index()==0){
+								$(".equipmen_outline li:eq("+deleteindex+")").remove();
+							}
+							var changetext="打开开关用以接受认证推送";
+							$(".equipmen_msg").removeClass("equipmen_opt");
+							$(".equipmen_msg p").html(changetext);
+						})
+					}
+					/*解绑微信*/
+					if(liindex == 2) {
+						var messtext="确定要解绑微信吗？";
+						showlayer(thattext,"alonemess",messtext);
+					}
+					/*退出登录*/
+					if(liindex == 3) {
+						var messtext="确定要退出吗？";
+						showlayer(thattext,"alonemess",messtext);
+					}
+				});
+				$(document).on("click", ".supply-img.supply-addimg,.sidebar-right-pic P>span", function(e) {
+					addapply("添加应用","common_use");
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

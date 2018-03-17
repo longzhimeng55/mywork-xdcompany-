@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<title>CAS 统一认证服务</title>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://192.168.1.122:8004/js/CIMS-Web-Frame-v2.js?version=23423" type="text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="http://xd3.trusfort.com:8000/cims/css/v2/ssonewlogin.css?v=20170803gf">
+	</head>
+
+	<body style="margin: 0px;">
+
+		<!-- 
+	<script type="text/javascript" src="http://sdk.trusfort.com:8000/myjs/xdid_sdk.js?com.trusfort.cas"></script>
+-->
+
+		<div style="margin: 0px;height:100%;width: 100%;" id="ssonewloginOutine1">
+			<iframe id="qrcont" marginwidth="0" style="margin: 0px;padding:0;height:100%;width: 100%;"marginheight="0"frameborder="0"></iframe>
+		</div>
+
+		<form id="fm1" action="/cas/login?service=http%3A%2F%2Fxd3.trusfort.com%3A8000%2Fsso%2F" method="post">
+			<input type="hidden" name="execution" value="" />
+			<input type="hidden" name="_eventId" value="submit" />
+		</form>
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(document).ready(function() {
+		function box() {
+			var oBox = document.getElementById('ssonewloginOutine1');
+			var oBox1 = document.getElementById('qrcont');
+			var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			oBox.style.width=100%+"px";
+			oBox.style.height=h+"px";
+			oBox1.style.width=100%+"px";
+			oBox1.style.height=h+"px";
+		}
+		box();
+	})
+	$(document).resize(function() {
+		box();
+	});
+</script>
+<script type="text/javascript">
+	CIMS.init({
+		host: 'http://192.168.1.122:8004',
+		postaction: 'http://xd3.trusfort.com:8000/cas/login',
+		qrpageurl: 'http://xd3.trusfort.com:8000/sso/',
+		sig_request: 'XD|IHwxMDc2NWJlNWE4ZWY0ZTFhYmNiOGNkYjBlZDRlMTFjN3wxNTIwNDg5NjEx|5767caf8daea264af4c05618016a827169aeb32f:APP|IHwxMDc2NWJlNWE4ZWY0ZTFhYmNiOGNkYjBlZDRlMTFjN3wxNTIwNDkyOTEx|fb05ece1035761a95a5ec65066d3628abd699cd3',
+		containerid: 'qrcont',
+		postArgument: 'signedCimsResponse',
+		email: '',
+		version: 'v2',
+		formid: 'fm1',
+		submitCallback: submitCallback
+	});
+
+	function submitCallback(form) {
+		$('#fm1').submit();
+	}
+</script>

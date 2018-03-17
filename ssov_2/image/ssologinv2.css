@@ -1,0 +1,938 @@
+/*
+ * @author zhanghelongoing by by 2017-12-15
+ * MFA loginpage
+ */
+
+@charset "utf-8";
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body,
+html {
+	height: 100%;
+	min-width: 1220px;
+	position: relative;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "Open Sans", sans-serif;
+	/*background: #FFFFFF;*/
+	padding:0px;margin:0px;
+}
+
+.canvas-box {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.xd-ssov2body {
+	background: url(image/MFAright1.png) no-repeat, linear-gradient(to bottom, #00062b, #004c90);
+	background: url(image/MFAright1.png) no-repeat, -webkit-linear-gradient(top, #00062b, #004c90);
+	background: url(image/MFAright1.png) no-repeat, -o-linear-gradient(bottom, #00062b, #004c90);
+	background: url(image/MFAright1.png) no-repeat, -moz-linear-gradient(bottom, #00062b, #004c90);
+	background-position: right;
+	position: relative;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00062b', endColorstr='#004c90', GradientType=1);
+}
+
+#ssov2login_bg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -2;
+	visibility: visible;
+}
+
+.main-leftbk {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: url(../image/main-leftbk.png) no-repeat;
+	background-position: left;
+	z-index: -1;
+}
+
+.main-rightbk {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: url(../image/main-rightbk.png) no-repeat;
+	background-position:center;
+	z-index: -1;
+}
+
+.main {
+	position: absolute;
+	width: 1100px;
+	height: 500px;
+	left: 50%;
+	top: 50%;
+	margin-left: -550px;
+	margin-top: -250px;
+	overflow: hidden;
+	background: #FFFFFF;
+	border-radius: 10px;
+}
+
+.main-title {
+	position: fixed;
+	top: 24px;
+	/*left: 300px;*/
+	z-index: 200;
+}
+.main-title.mail-rightskyp{
+	position: fixed;
+	top: 24px;
+	left: 1000px;
+	
+}
+.main-title.mail-rightskyp a{
+	float: left;
+	color: #57dccf;
+	display: inline-block;
+	border: 1px solid #57dccf;
+	padding: 5px 10px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.main-title.mail-rightskyp>p{
+	float: left;
+	display: inline-block;
+}
+.main-icon {
+	width: 60px;
+	height: 55px;
+	float: left;
+	margin: 0 auto;
+	padding-top: 7px;
+	padding-left: 4px;
+	padding-right: 8px;
+}
+
+.main-icon img {
+	margin: 0 auto;
+}
+
+.main-iconcontent {
+	float: left;
+	margin-left: 8px;
+	margin-top: 8px;
+}
+
+.main-iconcontent p {
+	font-size: 17px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+
+.main-iconcontent p:first-child {
+	font-size: 20px;
+}
+
+.main_con1>img {
+	width: 135px;
+	height: 40px;
+	display: inline-block;
+}
+
+.loginout {
+	width: 347px;
+	padding-top: 150px;
+	float: left;
+	padding-left: 65px;
+	/*border-radius: 10px;*/
+	opacity: 0.9;
+}
+
+.conlogin-leftout {
+	float: left;
+	width: 700px;
+	height: 500px;
+	background: #FFFFFF;
+	z-index: 100;
+}
+
+.conlogin-leftout {
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+}
+.main .conlogin-leftout {
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+}
+.main.open-right .conlogin-leftout {
+	-webkit-transform: translateX(-150%);
+	transform: translateX(-150%);
+}
+
+.conlogin-leftout>img {
+	width: 486px;
+	height: 382px;
+	display: inline-block;
+}
+
+.conlogin-rightout {
+	z-index: 200;
+	width: 400px;
+	height: 500px;
+	float: left;
+	position: relative;
+	background: #FFFFFF;
+	border-radius: 0px 10px 10px 0px;
+}
+
+.conlogin-rightout .two-dimencode {
+	margin: 0 auto;
+	padding: 0px 0px 40px 0px;
+}
+
+.conlogin-rightout .two-dimencode img {
+	width: 200px;
+	height: 200px;
+}
+
+.conlogin-rightout.conlogin-rightout1 {
+	border-radius: 10px 0px 0px 10px;
+}
+
+.conlogin-rightout.conlogin-rightout1 .two-dimencode {
+	opacity: 0.1;
+}
+
+.conlogin-rightout>p {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	line-height: 30px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.conright-content {
+	width: 100%;
+	height: 368px;
+	margin-top: 10px;
+	padding: 20px 20px 0px 20px;
+	z-index: 1;
+}
+
+.conright-content>p {
+	color: #FFFFFF;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.other-choose {
+	width: 100%;
+	height: 35px;
+	margin-top: 18px;
+	color: #FFFFFF;
+}
+
+.other-choose a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.other-choose a:active {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.other-choose p:first-child {
+	width: 100px;
+	float: left;
+	margin-top: -7px;
+}
+
+.other-choose p:first-child label {
+	margin-left: 3px;
+}
+
+.other-choose p:first-child input {
+	float: left;
+	display: inline-block;
+	width: 21px;
+	height: 17px;
+	font-size: 12px;
+	vertical-align: middle;
+	margin-top: 6.5px;
+}
+
+.other-choose p:last-child {
+	width: 80px;
+	float: right;
+	margin-right: 19px;
+}
+
+.other-choose p:last-child>span {
+	float: right;
+}
+
+.idaaslogin {
+	color: #ffffff\9\0;
+	color: #ffffff;
+	background-color: #0385ff;
+	text-align: center;
+	display: block;
+	width: 100%;
+	/*border-radius: 2px!important;*/
+	letter-spacing: 4px;
+	padding: 10px 10px;
+	font-size: 16px;
+	line-height: 20px;
+	text-decoration: none;
+	border: 0px;
+	margin-right: 20px;
+	width: 270px;
+	cursor: pointer;
+}
+
+.copyright-information {
+	position: fixed;
+	bottom: 25px;
+	text-align: center;
+	color: #7AA1D4;
+	width: 100%;
+}
+
+.copyright-information>p {
+	font-size: 14px;
+	line-height: 20px;
+	color: #80a6d9;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/*扫码登录方式*/
+
+.loginways {
+	float: left;
+	margin: 0 auto;
+	height: 465px;
+	width: 400px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.loginways p {
+	font-size: 17px;
+	line-height: 25px;
+	color: #817e7e;
+	margin: 14px 0px 25px 0px;
+}
+
+.loginways .login-title {
+	font-size: 26px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	color: #000000;
+}
+
+.two_dimencode {
+	margin: 40px 0px 50px 0px;
+}
+
+.two_dimencode img {
+	width: 200px;
+}
+
+.moreways {
+	display: none;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.moreways span {
+	display: inline-block;
+	padding: 8px 40px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #57dccf;
+	border: 1.5px solid #57dccf;
+	border-radius: 20px!important;
+	cursor: pointer;
+}
+
+
+/*******剩下的登录方式*******/
+
+.otherways {
+	position: relative;
+	right: -1100px;
+	width: 685px;
+	height: 500px;
+	z-index: 200;
+	background: #FFFFFF;
+}
+
+.open-right .otherways {
+	-webkit-transform: translateX(-102%);
+	transform: translateX(-102%);
+	/*right: -355px;*/
+}
+
+
+/*回到上一页*/
+
+.go-backpage {
+	position: relative;
+	left: 10px;
+	top: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.go-backpage span {
+	display: inline-block;
+	margin: 0 auto;
+	height: 44px;
+	position: absolute;
+	left: 0px;
+	padding-left: 40px;
+	background: url(../image/ssov2.png) no-repeat;
+	background-position: -158px 3px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.go-backpage span:hover {
+	background: url(../image/ssov2.png) no-repeat;
+	background-position: -111px 3px;
+}
+
+
+/*剩下的登录方式内容部分*/
+
+.otherways-content {
+	width: 100%;
+	height: 315px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0 auto;
+	position: absolute;
+}
+
+.otherways-login>p {
+	height: 20px;
+	width: 100%;
+	margin: 10px 0px 45px 0px;
+	font-size: 24px;
+	line-height: 30px;
+	color: #262626;
+	letter-spacing: 2px;
+}
+
+.otherways-login .login-input span input {
+	width: 300px;
+	height: 45px;
+	margin: 15px 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #d5d5d5;
+	font-size: 14px;
+	line-height: 18px;
+	color: #666666;
+	border-radius: 2px;
+}
+
+.otherways-login .login-input span input:hover {
+	border: 1px solid #C0C0C0;
+}
+
+.otherways-login .login-input span input:focus {
+	border: 1px solid #C0C0C0;
+}
+
+.otherways-login {
+	margin: 0 auto;
+	display: none;
+	margin-bottom: 38px;
+}
+
+.otherways-login.active {
+	display: block;
+}
+
+.otherways-login .login-input {
+	width: 100%;
+	margin-top: 30px;
+}
+
+.otherways-login .login-input span {
+	display: block;
+	width: 100%;
+}
+
+.otherways-login button {
+	font-size: 16px;
+	margin-top: 25px;
+	padding: 10px 3px;
+	width: 200px;
+	border: 0;
+	border-radius: 18px;
+	background: #42CABD;
+	color: #FFFFFF;
+	text-align: center;
+	display: inline-block;
+}
+
+.otherways-login button.disabled {
+	cursor: no-drop;
+	opacity: 0.5;
+}
+
+.otherways-login .forget-password {
+	text-align: center;
+	font-size: 12px;
+	line-height: 18px;
+	color: #53d3c8;
+	margin: 0;
+	margin-top: 20px;
+	letter-spacing: 0;
+	cursor: pointer;
+}
+
+
+/*登录按钮下面提示的文字*/
+
+
+/*人脸识别验证和声纹识别验证*/
+
+.login-mess {
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.login-mess p {
+	font-size: 14px;
+	line-height: 18px;
+	color: #666666;
+	margin: 0;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
+.login-mess p span {
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+
+/*短信验证和语音验证*/
+
+.login-inputcutd span:first-child input {
+	width: 225px;
+	margin-left: -76px;
+	border-radius: 2px 0px 0px 2px;
+}
+
+.login-inputcutd span .countdown {
+	display: inline-block;
+	position: absolute;
+	top:90px;
+	width: auto;
+	background: #53D3C8;
+	text-align: center;
+	color: #FFFFFF;
+	cursor: pointer;
+	padding: 12.5px 10px;
+	border-radius: 0px 2px 2px 0px;
+}
+
+.login-inputcutd span .countdown.disabled {
+	opacity: 0.5;
+	cursor: no-drop;
+}
+
+
+/*微信登录和扫码登录*/
+
+.login-inputcode {}
+
+.login-inputcode>p {
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0 auto;
+	margin: 5px 0px;
+	text-align: center;
+	color: #666666;
+}
+
+.tabs-content7 .login-inputcode img {
+	margin: 20px 0px;
+	width: 117px;
+    height: 96px;
+}
+.tabs-content7 .moreways{
+	display: block;
+	margin-top: 15px;
+}
+.otherways-login.tabs-content7 .login-input span{
+	width: auto;
+	display: inline;
+}
+.otherways-login.tabs-content7 .moreways span{
+	padding: 8px 25px;
+}
+
+/*剩下的登录方式按钮*/
+
+.otherways-button {
+	width: 700px;
+	height: 106px;
+	margin-top: 345px;
+	background: #f3f4f4;
+	border: 1px solid #ebebeb;
+}
+
+.button-content {
+	float: left;
+	position: relative;
+	width: 85px;
+	height: 105px;
+	margin: 0 auto;
+	margin-top: -104px;
+}
+
+.button-content span {
+	display: none;
+	position: absolute;
+	left: 32px;
+	top: -1px;
+	overflow: hidden;
+	width: 20px;
+	height: 20px;
+	background: #f3f4f4;
+	background: url("../image/authmethod.png") no-repeat -49.5px -487px;
+}
+
+.button-content.active span {
+	display: block;
+}
+
+.button-content div {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+	background: #ffffff;
+	border: #000000;
+	margin-top: 15px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.button-content.active div {
+	background: #ffffff;
+}
+
+.login-icon .login-img {
+	border: 0;
+	margin: 0 auto;
+	width: 65px;
+	height: 65px;
+	display: inline-block;
+}
+
+.button-content p {
+	font-size: 13px;
+	line-height: 16px;
+	width: 85px;
+	margin: 0 auto;
+	margin: 5px 0px;
+	text-align: center;
+	display: none;
+}
+
+.button-content.active p {
+	display: block;
+}
+
+
+/*为了兼容ie8，采用改变背景图的方式来做*/
+
+
+/*动态口令默认*/
+
+.login-icon.login-icondynade .login-img {
+	background: url("../image/authmethod.png") no-repeat -46.5px -9px;
+}
+
+
+/*动态口令鼠标滑过*/
+
+.login-icon.login-icondynade .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -146.5px -9px;
+}
+
+
+/*动态口令选中*/
+
+.login-icon.login-icondynade.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -252px -9px;
+}
+
+.button-content.active  .login-icon.login-iconpwdde .login-img{
+	background: url("../image/authmethod.png") no-repeat -252px -9px;
+} 
+/*人脸默认*/
+
+.login-icon.login-iconfacede .login-img {
+	background: url("../image/authmethod.png") no-repeat -350px -9px;
+}
+
+
+/*人脸鼠标滑过*/
+
+.login-icon.login-iconfacede .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -450.5px -9px;
+}
+
+
+/*人脸选中*/
+
+.login-icon.login-iconfacede.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -547.5px -9px;
+}
+.button-content.active  .login-icon.login-iconfacede .login-img{
+	background: url("../image/authmethod.png") no-repeat -252px -9px;
+} 
+
+/*声纹默认*/
+
+.login-icon.login-iconvocalde .login-img {
+	background: url("../image/authmethod.png") no-repeat -46.5px -103px;
+}
+
+
+/*声纹鼠标滑过*/
+
+.login-icon.login-iconvocalde .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -146.5px -103px;
+}
+
+
+/*声纹选中*/
+
+.login-icon.login-iconvocalde.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -251px -103px;
+}
+.button-content.active  .login-icon.login-iconvocalde .login-img{
+	background: url("../image/authmethod.png") no-repeat -251px -103px;
+} 
+
+/*APP一键登录默认*/
+
+.login-icon.login-iconapponede .login-img {
+	background: url("../image/authmethod.png") no-repeat -350px -103px;
+}
+
+
+/*APP一键登录鼠标滑过*/
+
+.login-icon.login-iconapponede .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -450.5px -103px;
+}
+
+
+/*APP一键登录选中*/
+
+.login-icon.login-iconapponede.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -547.5px -103px;
+}
+.button-content.active .login-icon.login-iconapponede .login-img{
+	background: url("../image/authmethod.png") no-repeat -251px -103px;
+} 
+
+/*短信默认*/
+
+.login-icon.login-iconmessde .login-img {
+	background: url("../image/authmethod.png") no-repeat -46.5px -202.5px;
+}
+
+
+/*短信鼠标滑过*/
+
+.login-icon.login-iconmessde .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -146.5px -202.5px;
+}
+
+
+/*短信选中*/
+
+.login-icon.login-iconmessde.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -250.5px -202.5px;
+}
+.button-content.active .login-icon.login-iconmessde .login-img{
+	background: url("../image/authmethod.png") no-repeat -250.5px -202.5px;
+} 
+/*语音默认*/
+
+.login-icon.login-iconvoicede .login-img {
+	background: url("../image/authmethod.png") no-repeat -349.5px -202.5px;
+}
+
+
+/*语音鼠标滑过*/
+
+.login-icon.login-iconvoicede .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -450.5px -202.5px;
+}
+
+
+/*语音选中*/
+
+.login-icon.login-iconvoicede.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -547.5px -202.5px;
+}
+.button-content.active .login-icon.login-iconvoicede .login-img{
+	background: url("../image/authmethod.png") no-repeat -547.5px -202.5px;
+} 
+
+/*临时授权码默认*/
+
+.login-icon.login-icontempde .login-img {
+	background: url("../image/authmethod.png") no-repeat -46.5px -296.5px;
+}
+
+
+/*临时授权码鼠标滑过*/
+
+.login-icon.login-icontempde .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -146.5px -296.5px;
+}
+
+
+/*临时授权码选中*/
+
+.login-icon.login-icontempde.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -250.5px -296.5px;
+}
+.button-content.active .login-icon.login-icontempde .login-img{
+	background: url("../image/authmethod.png") no-repeat -250.5px -296.5px;
+} 
+
+/*微信默认*/
+
+.login-icon.login-iconwechatde .login-img {
+	background: url("../image/authmethod.png") no-repeat -349.5px -296.5px;
+}
+
+
+/*微信鼠标滑过*/
+
+.login-icon.login-iconwechatde .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -450.5px -296.5px;
+}
+
+
+/*微信选中*/
+
+.login-icon.login-iconwechatde.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -547.5px -296.5px;
+}
+.button-content.active .login-icon.login-iconwechatde .login-img{
+	background: url("../image/authmethod.png") no-repeat -547.5px -296.5px;
+} 
+/*扫码默认*/
+
+.login-icon.login-iconscande .login-img {
+	background: url("../image/authmethod.png") no-repeat -46.5px -389.5px;
+}
+
+
+/*扫码鼠标滑过*/
+
+.login-icon.login-iconscande .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -146.5px -389.5px;
+}
+
+
+/*扫码选中*/
+
+.login-icon.login-iconscande.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -250.5px -389.5px;
+}
+.button-content.active .login-icon.login-iconscande .login-img{
+	background: url("../image/authmethod.png") no-repeat -250.5px -389.5px;
+} 
+/*密码登录默认*/
+.login-icon.login-iconpwdde .login-img {
+	background: url("../image/authmethod.png") no-repeat -349.5px -389.5px;
+}
+/*密码登录鼠标滑过*/
+.login-icon.login-iconpwdde .login-img:hover {
+	background: url("../image/authmethod.png") no-repeat -450.5px -389.5px;
+}
+/*密码登录选中*/
+.login-icon.login-iconpwdde.login-iconmo .login-img {
+	background: url("../image/authmethod.png") no-repeat -547.5px -389.5px;
+}
+.button-content.active .login-icon.login-iconpwdde .login-img{
+	background: url("../image/authmethod.png") no-repeat -547.5px -389.5px;
+} 
+/*翻页动画*/
+.open-right .conlogin-rightout {
+	z-index: 200;
+	-webkit-transform: translateX(-175%);
+	transform: translateX(-175%);
+}
+
+.open-right .conlogin-rightout1 {
+	position: relative;
+}
+
+.open-right .conlogin-rightout1 .bk-dim {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 400px;
+	height: 500px;
+	background: url("../image/mohu.png") no-repeat;
+	z-index: 201;
+	cursor: no-drop;
+}
+
+.conlogin-rightout,.otherways {
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+}
+
+.open-right .otherways {
+	/*-webkit-transform: translateX(0%);
+    transform: translateX(0%);*/
+}
+
+
+/*在首页中配置显示的内容*/
+
+.loginways .otherways-login {
+/*	display: none;*/
+	height: 318px;
+}
+
+.loginways .login-inputcutd span .countdown {
+	top: 130px;
+}
+.login-bottomicon{
+	width: 200px;
+	height: 52px;
+	margin: 0 auto;
+	z-index: 200;
+	background: url(../image/xindunlogo.png) no-repeat center;
+}
